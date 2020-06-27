@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Jogo da Memória</title>
+</head>
+<body>
+
+    <main>
+    <h1 style="text-align: center;">Jogo da Memória</h1>
+    <div class="w3-container">
+          <!-- Div para carregar o menu do lado com as informações sobre o jogo, ranking e cadastro. inicio-->
+      <div class="w3-container w3-display-topleft" style="padding-top: 6%; margin-left: 2%;">
+        <ul>
+          <li><a button onclick="document.getElementById('id01').style.display='block'">Ranking</button></a></li>
+          <li><a button onclick="document.getElementById('id02').style.display='block'">Sobre o Jogo</button></a></li>
+          <li><a button onclick="document.getElementById('id03').style.display='block'">Cadastro</button></a></li>
+        </ul>
+      </div> 
+         <!-- Div para carregar o menu do lado com as informações sobre o jogo, ranking e cadastro. fim-->
+      <div id="jogo-da-memoria"></div>
+      <button onclick="reset()">RECOMEÇAR</button>
+      Pontuação: <span id="pontuacao"></span>,
+      Último Recorde: <span id="record"></span>
+      
+       <!-- Modal para o jogador colocar seus dados antes de iniciar o jogo inicio-->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 style="text-align: center;">Coloque seu nome e e-mail para jogar</h2>
+      <form>
+        <label for="fname">Nome:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">E-mail:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <button onclick="document.getElementById('myModal').style.display='none'" type="button" class="w3-button w3-white">Jogar</button>
+      </form> 
+          </div>
+        </div>
+      </div> 
+    <!-- Modal para o jogador colocar seus dados antes de iniciar o jogo fim-->
+  </main>
+  <script src="./scripts/jogo-da-memoria.js"></script>
+
+ <!-- Modal para carregar o ranking dos jogadores  inicio-->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <h4 style="text-align: center;">Ranking do Jogo</h4>
+        <ol>
+          <li>João de Oliveira Neto   - Pontuação 12</li> 
+          <li>Rodrigo dos Santos      - Pontuação 14</li>
+          <li>Marcos Paulo da Silva   - Pontuação 15</li>
+          <li>Guilherme Alves Calli   - Pontuação 18</li>
+          <li>Suelen Alves Nishiuchi  - Pontuação 22</li>
+          <li>Tiago Arantes Paradiso  - Pontuação 23</li>
+          <li>Andrews Arantes         - Pontuação 27</li>
+          <li>Luciana Alves Pereira   - Pontuação 29</li>
+          <li>Marcelo Alves Faria     - Pontuação 30</li>
+          <li>Paulo Palma             - Pontuação 31</li>
+          <li>Solange Maria de Souza  - Pontuação 32</li>
+          <li>Alexandre de Moraes     - Pontuação 33</li>
+          <li>Fernando da Silva       - Pontuação 33</li>
+          <li>Gabriela Dantas         - Pontuação 34</li>
+          <li>Vitor de Almeida        - Pontuação 35</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+   <!-- Modal para carregar o ranking dos jogadores  fim-->
+
+ <!-- Modal para carregar as informacoes do jogo inicio-->
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <h4 style="text-align: center;">Informações do Jogo</h4>
+        <p>O nosso jogo foi pensado em testar a sua memória e conhecimentos sobre alguns times de futebol da europa.
+          Além de se divertir,você ainda vai estimular a sua concentração e memória.
+        </p>
+        <h4 style="text-align: center;">Regras do Jogo</h4>
+        <ol>
+          <li>Para iniciar o jogo você deverá colocar o seu nome</li>
+          <li>Você deverá clicar em uma carta de cada vez até encontrar a mesma imagem</li>
+          <li>Tente encontrar todas as cartas com o menor número de cliques possíveis</li>
+          <li>Clique em recomeçar para tentar novamente</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+   <!-- Modal para carregar as informacoes do jogo fim-->
+
+    <!-- Modal para carregar o cadastro do jogador inicio-->
+  <div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id03').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <div class="container">
+            <div class="row">
+              <div class="col-25">
+                <label for="fname">Nome</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Escreva seu nome completo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">E-mail</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Escreva seu e-mail">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="country">Gostaria de ser notificado quando alguém superar o seu recorde ?</label>
+              </div>
+              <div class="col-75">
+                <select id="country" name="country">
+                  <option value="australia">Sim</option>
+                  <option value="canada">Não</option>
+                </select>
+              </div>
+            </div>
+            <div class="row"><br>
+              <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-button w3-green">Enviar</button>
+            </div>
+        </div>
+      </div>
+    </div>
+     <!-- Modal para carregar o cadastro do jogador fim-->
+
+</body>
+</html>
